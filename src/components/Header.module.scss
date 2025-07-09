@@ -1,0 +1,16 @@
+@use '../styles/mixins' as *;
+
+.header {
+    background: rgb(110, 161, 255);
+    padding: 5px 20px;
+    @include display-center;
+}
+
+ul {
+    @include display-center;
+    gap: 40px;
+}
+
+a {
+    color: black;
+}

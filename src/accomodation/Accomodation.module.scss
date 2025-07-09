@@ -1,0 +1,102 @@
+@use '../styles/variables.scss' as *;
+@use '../styles/mixins.scss' as *;
+
+.articleCenterPage {
+    width: 100%;
+    height: 75vh;
+    background-color: gray;
+    align-content: center;
+}
+
+.articlePage {
+    width: 95%;
+    height: 90%;
+    background-color: rgb(116, 88, 17);
+    color: aliceblue;
+    margin: 0 auto;
+    border-radius: $mid-radius;
+    overflow: hidden;
+}
+
+.articleCenterPage img {
+    margin-bottom: 20px;
+    width: 100%;
+    height: 350PX;
+    border-radius: $mid-radius;
+}
+
+.articleCenterPage .profile {
+    @include display-center;
+    margin: 5px 20px
+}
+
+.articleCenterPage .profileContainer {
+    @include display-center;
+    justify-content: space-evenly;
+}
+
+.articleCenterPage .picProfile {
+    width: 30%;
+    height: auto;
+    border-radius: 50%;
+    margin-top: 15px;
+}
+
+.articleCenterPage .prevArrow,
+.articleCenterPage .nextArrow {
+    display: inline-block;
+    position: absolute;
+    margin: 0 10px;
+    color: rgb(255, 255, 255);
+    font-size: 50px;
+    cursor: pointer;
+}
+
+.articleCenterPage .prevArrow {
+    top: 268px;
+    left: 300px;
+    transform: rotate(180deg)
+}
+
+.articleCenterPage .nextArrow {
+    top: 262px;
+    left: 1560px;
+}
+
+.articleCenterPage .tagsRating {
+    @include display-center;
+    margin: 20px;
+}
+
+.articleCenterPage .tags {
+    display: flex;
+    gap: 15px;
+    width: 30%;
+}
+
+.articleCenterPage .tags span {
+    background-color: salmon;
+    padding: 5px 20px;
+    border-radius: $min-radius;
+}
+
+.articleCenterPage .tagsRating p {
+    color: salmon;
+    font-size: 35px
+}
+
+.articleCenterPage .dropDownMenus {
+    @include display-center;
+    gap: 15px;
+    margin: 0 20px;
+    width: 97%;
+}
+
+.articleCenterPage .description,
+.articleCenterPage .equipements {
+    @include display-center;
+    width: 40%;
+    background-color: salmon;
+    padding: 5px 20px;
+    border-radius: $min-radius;
+}
