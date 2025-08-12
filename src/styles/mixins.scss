@@ -1,7 +1,25 @@
-@mixin display-center {
+@mixin display-between {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+@mixin display-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin display-end {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+@mixin display-start {
+    display: flex;
+    justify-content: end;
+    align-items: flex-start;
 }
 
 @mixin shadow {

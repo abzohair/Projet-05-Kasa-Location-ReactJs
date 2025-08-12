@@ -1,20 +1,17 @@
-import React from 'react';
 import Header from '../components/Header';
-import { matchPath, Outlet, useLocation } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
+import Footer from '../components/Footer';
 
 const Layout = () => {
 
-    const location = useLocation();
-    const patterns = ['/', '/accomodation/:id', '/about'];
-
-    const isKnownPath = patterns.some(pattern => matchPath(pattern, location.pathname));
 
     return (
         <>
-            {isKnownPath && <Header />}
+            <Header />
             <main>
                 <Outlet />
             </main>
+            <Footer />
         </>
     );
 };

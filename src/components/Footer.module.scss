@@ -1,0 +1,32 @@
+.footer {
+    color: 'white';
+    background-color: black;
+    text-align: center;
+    height: 150px;
+    align-content: center;
+    margin: 0 auto;
+    color: white;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    // bottom: 0;
+}
+
+@media (max-width: 767.98px) {
+
+    .footer {
+        width: 100%;
+        // bottom: 0;
+
+        img {
+            width: 30%;
+        }
+
+        p {
+            width: 30%;
+            font-size: 13px;
+            margin: 5px auto;
+        }
+    }
+
+}

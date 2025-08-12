@@ -1,0 +1,55 @@
+@use '../../styles/variables.scss' as *;
+@use '../../styles/mixins.scss' as *;
+
+.section {
+    width: 80%;
+    height: 80vh;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: salmon;
+
+    .bigTitle {
+        font-size: 200px;
+        font-weight: bolder;
+        margin-bottom: 17px;
+    }
+
+    .subtitle {
+        font-size: 17px;
+        margin-bottom: 17px;
+    }
+
+    .link {
+        text-decoration: underline;
+        font-weight: bold;
+        color: black;
+    }
+}
+
+@media (max-width: 767.98px) {
+
+    .section {
+        width: 100%;
+
+        .bigTitle {
+            font-size: 100px;
+
+        }
+
+        .subtitle {
+            text-align: center;
+            font-size: 21px;
+            padding: 20px;
+        }
+
+        .link {
+            text-decoration: underline;
+            font-size: 15px;
+
+        }
+
+    }
+}

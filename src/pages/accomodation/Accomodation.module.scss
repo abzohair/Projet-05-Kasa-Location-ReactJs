@@ -1,0 +1,282 @@
+@use '../../styles/variables.scss' as *;
+@use '../../styles/mixins.scss' as *;
+
+.articleCenterPage {
+    width: 80%;
+    margin: 0 auto;
+
+    .articlePage {
+        color: aliceblue;
+        margin: 0 auto;
+        // border-radius: $mid-radius;
+        padding: 0 30px;
+
+        // --------------- image apparts ----------------
+        .carrouselWrapper {
+            @include display-center;
+            position: relative;
+
+            img {
+                width: 100%;
+                height: 450px;
+                border-radius: $mid-radius;
+                display: block;
+            }
+
+            // ------------------- flèches carousel -------------
+            .prevArrow,
+            .nextArrow,
+            .counter {
+                color: rgb(255, 255, 255);
+                font-size: 50px;
+                cursor: pointer;
+                position: absolute;
+            }
+
+            .prevArrow {
+                left: 0;
+                width: 10%;
+                height: 10%;
+            }
+
+            .nextArrow {
+                right: 0;
+                width: 10%;
+                height: 10%;
+            }
+
+            .counter {
+                font-size: 23px;
+                bottom: 0
+            }
+        }
+
+        .globalProfile {
+            @include display-between;
+            margin: 20px 0 10px 0;
+
+            .profileLocTagsTitle {
+                @include display-start;
+                flex-direction: column;
+                gap: 30px;
+                color: $salm-color;
+
+                .adresse {
+                    color: black;
+                    font-weight: 600;
+                    font-size: 16px;
+                }
+
+                .tags {
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 15px;
+                    color: white;
+
+                    span {
+                        background-color: $salm-color;
+                        padding: 5px 20px;
+                        border-radius: $min-radius;
+                    }
+                }
+            }
+
+            .profileRating {
+                .profileContainer {
+                    @include display-end;
+                    gap: 20px;
+                }
+
+                .hostName {
+                    color: $salm-color;
+                    font-size: 20px;
+                    width: 25%;
+                    margin-bottom: -21px;
+                }
+
+                .picProfile {
+                    width: 20%;
+                    height: auto;
+                    border-radius: 50%;
+                    margin-top: 15px;
+                }
+
+                p {
+                    color: $salm-color;
+                    font-size: 35px;
+                    text-align: end;
+                }
+
+            }
+        }
+
+        //-------------------------- description & equipement éléments -----------------
+        .dropDownMenus {
+            @include display-center;
+            align-items: flex-start;
+            gap: 15px;
+            margin: 0 auto;
+            width: 100%;
+
+            .descripContainer,
+            .equipContainer {
+                @include display-center;
+                flex-direction: column;
+                width: 100%;
+
+                .content {
+                    width: 100%;
+                    margin-bottom: 10px;
+                    color: black;
+                    transition: transform 0.9s ease;
+                    height: 0;
+                    overflow: hidden;
+                    transition: height 0.3s ease-in;
+
+                    p {
+                        padding: 10px;
+                    }
+
+                    ul {
+                        margin-top: 10px;
+                    }
+                }
+            }
+
+            .description,
+            .equipements {
+                @include display-between;
+                width: 100%;
+                background-color: $salm-color;
+                padding: 5px 20px;
+                border-radius: $min-radius;
+
+                span {
+                    cursor: pointer;
+                    transition: transform 0.3s ease;
+                    transform-origin: center;
+
+                    // ----------- menu deroulant
+                    &.rotateSpan {
+                        transform: rotate(-180deg);
+                    }
+                }
+            }
+
+        }
+
+        // --------- scroll 
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+
+}
+
+// ______________ responsive _______________________
+@media (max-width: 767.98px) {
+    .articleCenterPage {
+        width: 100%;
+
+        .articlePage {
+            padding: 0;
+
+            .carrouselWrapper {
+                img {
+                    height: 256px;
+                    border-radius: 10px;
+                }
+
+                .prevArrow,
+                .nextArrow,
+                .counter {
+                    color: rgb(255, 255, 255);
+                    font-size: 30px;
+                }
+
+                .counter {
+                    font-size: 17px;
+                }
+            }
+
+            .globalProfile {
+                @include display-between;
+                flex-direction: column;
+                align-items: flex-start;
+                margin-top: 5px;
+
+                .profileLocTagsTitle {
+                    @include display-between;
+                    flex-direction: column;
+                    align-items: flex-start;
+
+                    h2 {
+                        margin-bottom: 7px;
+                        font-size: 19px;
+                        width: 97%;
+                    }
+
+                    .adresse {
+                        font-size: 15px;
+                        margin-top: 20px;
+                    }
+
+                    .tags {
+                        span {
+                            background-color: $salm-color;
+                            padding: 3px 15px;
+                            border-radius: 8px;
+                            font-size: 15px;
+                        }
+                    }
+                }
+
+                .profileRating {
+                    @include display-between;
+                    flex-direction: row-reverse;
+                    margin-bottom: 5px;
+
+                    .profileContainer {
+                        gap: 10px;
+                    }
+
+                    .hostName {
+                        color: $salm-color;
+                        font-size: 15px;
+                        width: 31%;
+                        margin-bottom: -12px;
+                        text-align: end;
+                    }
+
+                    p {
+                        text-align: start;
+
+                        img {
+                            width: 15%;
+
+                        }
+                    }
+                }
+            }
+
+            .dropDownMenus {
+                flex-direction: column;
+                margin: 0;
+                gap: 0;
+
+                .descripContainer,
+                .equipContainer {
+                    .content {
+                        width: 100%;
+                        padding: 5px 0 0 0;
+                    }
+                }
+            }
+
+        }
+    }
+
+}

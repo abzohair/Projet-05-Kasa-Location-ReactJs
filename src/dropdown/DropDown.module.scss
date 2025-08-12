@@ -1,0 +1,36 @@
+.content {
+    margin: 0 auto;
+    width: 100%;
+
+    .head {
+        background-color: salmon;
+        border-radius: 5px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 3px 5px 3px 5px;
+        color: white;
+
+        span {
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            transform-origin: center;
+        }
+    }
+
+    .text {
+        padding: 0 10px 0 10px;
+        margin: 10px 0 10px 0;
+        height: 0;
+        overflow: hidden;
+        color: black;
+        transition: height 0.3s ease-in;
+    }
+
+
+    .rotateSpan {
+        transform: rotate(-180deg);
+    }
+
+}

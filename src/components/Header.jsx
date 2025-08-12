@@ -1,8 +1,11 @@
-import React from 'react';
 import styles from './Header.module.scss'
 import { NavLink } from 'react-router-dom';
 
 const Header = () => {
+
+    function active(isActive) {
+        return (isActive ? styles.active : '');
+    }
 
     return (
         <header className={styles.header}>
@@ -12,8 +15,8 @@ const Header = () => {
 
             <nav className={styles.header}>
                 <ul >
-                    <li > <NavLink to='/' >Accueil</NavLink>  </li>
-                    <li > <NavLink to='/about'>À Propos</NavLink>  </li>
+                    <li > <NavLink to='/' className={({ isActive }) => active(isActive)}>Accueil</NavLink>  </li>
+                    <li > <NavLink to='/about' className={({ isActive }) => active(isActive)}>À Propos</NavLink>  </li>
                 </ul>
             </nav>
         </header>
