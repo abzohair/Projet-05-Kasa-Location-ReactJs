@@ -115,7 +115,7 @@
             @include display-center;
             align-items: flex-start;
             gap: 15px;
-            margin: 0 auto;
+            margin: 0 auto 20px auto;
             width: 100%;
 
             .descripContainer,
@@ -126,7 +126,6 @@
 
                 .content {
                     width: 100%;
-                    margin-bottom: 10px;
                     color: black;
                     transition: transform 0.9s ease;
                     height: 0;
@@ -145,11 +144,7 @@
 
             .description,
             .equipements {
-                @include display-between;
-                width: 100%;
-                background-color: $salm-color;
-                padding: 5px 20px;
-                border-radius: $min-radius;
+                padding: 15px 20px 20px 10px;
 
                 span {
                     cursor: pointer;
@@ -199,6 +194,7 @@
 
                 .counter {
                     font-size: 17px;
+                    display: none;
                 }
             }
 
@@ -264,16 +260,6 @@
 
             .dropDownMenus {
                 flex-direction: column;
-                margin: 0;
-                gap: 0;
-
-                .descripContainer,
-                .equipContainer {
-                    .content {
-                        width: 100%;
-                        padding: 5px 0 0 0;
-                    }
-                }
             }
 
         }

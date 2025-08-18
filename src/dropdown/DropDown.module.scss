@@ -2,6 +2,8 @@
     margin: 0 auto;
     width: 100%;
 
+
+
     .head {
         background-color: salmon;
         border-radius: 5px;
@@ -10,6 +12,7 @@
         justify-content: space-between;
         align-items: center;
         padding: 3px 5px 3px 5px;
+        // margin-bottom: 7px;
         color: white;
 
         span {
@@ -20,14 +23,20 @@
     }
 
     .text {
-        padding: 0 10px 0 10px;
-        margin: 10px 0 10px 0;
+        // padding: 0 10px 0 10px;
+        // margin: 10px 0 10px 0;
         height: 0;
         overflow: hidden;
         color: black;
         transition: height 0.3s ease-in;
+        // background-color: rgb(243, 16, 16);
+        background-color: #F6F6F6;
     }
 
+    .bgContent {
+        background-color: #F6F6F6;
+        padding: 0 20px 0 20px;
+    }
 
     .rotateSpan {
         transform: rotate(-180deg);

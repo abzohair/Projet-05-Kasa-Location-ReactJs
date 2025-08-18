@@ -7,23 +7,25 @@ import DropDown from '../../dropdown/DropDown';
 
 const Acomodation = () => {
 
-    const { id } = useParams();
-    const property = Properties.find(item => item.id === id);
+    const { id } = useParams(); //On récupère l'id unique du logemant dans l'url
+    const property = Properties.find(item => item.id === id); //on cherche l'objet dont l'id correspond uniquement à celui de l'URL
+
 
     let pictures;
     const [currentIdenxPic, setCurrentIdenxPic] = useState(0);
     pictures = property?.pictures;
-    const multiPics = pictures.length > 1;
+    const multiPics = pictures.length > 1; //On crée une variable qu'on va appliquer pour afficher ou pas, les élément de navigation.
 
     function handlePrev() {
+        //Si on à la première img on passe à la dernière sinon on recule.
         setCurrentIdenxPic((prev) => prev === 0 ? pictures.length - 1 : prev - 1);
     }
     function handleNext() {
         setCurrentIdenxPic((prev) => prev === pictures.length - 1 ? 0 : prev + 1);
     }
 
-    const maxRating = 5;
-    const rating = Number(property.rating);
+    const maxRating = 5; //On crée un nomdbre maximal pour les étoiles qu'on veut afficher.
+    const rating = Number(property.rating); //On recupère le rating dans l'objet et on le convertie en nombre.
 
     return (
 
@@ -69,7 +71,9 @@ const Acomodation = () => {
 
                         <p>
                             {
+                                //on crée un tableau avec 5 éléments
                                 Array.from({ length: maxRating }, (_, i) => (
+                                    //affiche les étoiles pleines
                                     i < rating ? (
                                         <img
                                             key={i}
@@ -89,13 +93,12 @@ const Acomodation = () => {
 
                 <div className={styles.dropDownMenus}>
 
-                    <DropDown title={<p>Description</p>} element={property.description} />
+                    <DropDown title={<p>Description</p>} element={<p className={styles.description}>{property.description}</p>} />
                     <DropDown
                         title={<p>Equipements</p>}
-                        element={<ul >{property.equipments.map((item, i) =>
+                        element={<ul className={styles.equipements} >{property.equipments.map((item, i) =>
                             <li key={i}>{item} </li>
                         )}</ul>} />
-
                 </div>
 
             </section>
