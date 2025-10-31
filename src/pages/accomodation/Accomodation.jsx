@@ -77,12 +77,12 @@ const Acomodation = () => {
                                     i < rating ? (
                                         <img
                                             key={i}
-                                            src="../../icons/star-full.svg"
+                                            src="/icons/star-full.svg"
                                             alt="étoile pleine" />
                                     ) : (
                                         <img
                                             key={i}
-                                            src="../../icons/star-empty.svg"
+                                            src="/icons/star-empty.svg"
                                             alt="étoile vide" />)
                                 ))
                             }

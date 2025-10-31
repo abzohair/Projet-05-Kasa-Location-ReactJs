@@ -10,7 +10,7 @@ const Header = () => {
     return (
         <header className={styles.header}>
             <picture>
-                <img src="../logos/logo_header.jpg" alt="logo-kasa" />
+                <img src="/logos/logo_header.jpg" alt="logo-kasa" />
             </picture>
 
             <nav className={styles.header}>

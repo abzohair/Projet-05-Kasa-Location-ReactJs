@@ -15,7 +15,7 @@ const DropDown = ({ title, element }) => {
                     onClick={toggleHeight}
                     className={showHide ? styles.rotateSpan : ''}
                 >
-                    < img src="../../icons/arrow_up.svg" alt="icone flèche" />
+                    < img src="/icons/arrow_up.svg" alt="icone flèche" />
                 </span>
             </div>
             <div className={`${styles.text}`}
